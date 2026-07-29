@@ -1,0 +1,1498 @@
+/*====================================
+  VARIABLES
+====================================*/
+:root{
+     /* Colores institucionales */
+    --azul-principal:#0D47A1;
+    --azul-secundario:#1565C0;
+    --azul-claro:#E3F2FD;
+    --azul-borde:#1976D2;
+    --azul-pal: #E8F0FE;
+    --azul-texto: #1A237E;
+    /* Colores generales */
+    --blanco:#FFFFFF;
+    --gris-claro:#F5F5F5;
+    --gris-texto:#424242;
+    --gris-borde:#CCCCCC;
+    /* Sombras */
+    --sombra:0px 2px 8px rgba(0,0,0,0.15);
+    /* Bordes */
+    --radio:10px;
+}
+/*====================================
+  ESTRUCTURA SEMÁNTICA
+====================================*/
+body {
+    background-color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:var(--azul-principal);
+    color:var(--blanco);
+    gap:35px;
+    padding:20px;
+}
+nav{
+    background-color: var(--azul-secundario);
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav a{
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+nav a:hover{
+    background-color: var(--azul-principal);
+}
+/*====================================
+    LAYOUT PRINCIPAL
+====================================*/
+main {
+    max-width: 1600px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado */
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box; /* Importante para que el padding no desborde */
+}
+/* Asegurar que todos los elementos respeten el box-sizing */
+* {
+    box-sizing: border-box;
+}
+section{
+    margin-bottom:40px;
+}
+/*====================================
+   BANNER
+====================================*/
+.hero{
+    position: relative;
+    height: 400px;
+    background-image: url("../imagenes/banner/atezca.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.25);
+}
+.hero-contenido{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    color:white;
+}
+.hero-contenido h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+/*====================================
+   BOTON
+====================================*/
+.boton{
+    display:inline-block;
+    background-color:var(--azul-secundario);
+    color:white;
+    padding:12px 24px;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+.boton:hover{
+    background-color:var(--azul-principal);
+}
+/*====================================
+   LOGOTIPOS
+====================================*/
+.titulo{
+    flex:1;
+    text-align:center;
+    max-width:900px;
+}
+.logo-izquierdo img,
+.logo-derecho img{
+    width:100px;
+    height:auto;
+}
+/*====================================
+    SIGLAS
+====================================*/
+.siglas{
+    font-size:1.4rem;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-top:10px;
+}
+
+/*====================================
+  CLASES
+====================================*/
+
+.destacado{
+    background-color: var(--azul-claro);
+    border-left:6px solid var(--azul-borde);
+    padding: 15px;
+    margin: 20px 0;
+}
+/*====================================
+  ENLACE
+====================================*/
+.enlace{
+}
+.enlace a{
+    color:var(--azul-secundario);
+    text-decoration:none;
+    font-weight:bold;
+}
+.enlace a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+/*====================================
+  TARJETAS
+====================================*/
+.tarjeta{
+    border:1px solid var(--gris-borde);
+    padding:20px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:var(--sombra);
+}
+.tarjeta h3{
+    color:var(--azul-secundario);
+    margin-top:0;
+    margin-bottom:12px;
+}
+.tarjeta p{
+    line-height:1.6;
+}
+.tarjeta a{
+    color:var(--azul-secundario);
+    text-decoration:none;
+    font-weight:bold;
+}
+.tarjeta a:hover{
+    text-decoration:underline;
+}
+/*====================================
+  INTEGRANTES
+====================================*/
+.integrante{
+    background-color:var(--azul-pal);
+    border-left:6px solid var(--azul-borde);
+}
+.integrante h3{
+    color:var(--azul-secundario);
+    margin-bottom:5px;
+}
+.integrante p{
+    margin-top:0;
+    color:var(--azul-texto);
+}
+.contenido{
+    flex:3;
+}
+.lateral{
+    flex:1;
+}
+.lateral .tarjeta{
+    margin-bottom:20px;
+}
+/*====================================
+            FOOTER
+====================================*/
+footer{
+    background-color:var(--azul-principal);
+    color:var(--blanco);
+    margin-top:40px;
+}
+.footer-contenedor{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    padding:40px;
+}
+.footer-columna{
+    flex:1;
+}
+.footer-columna h3{
+    margin-top:0;
+    margin-bottom:15px;
+}
+.footer-columna ul{
+    list-style:none;
+    padding:0;
+}
+.footer-columna li{
+    margin-bottom:8px;
+}
+.footer-columna a{
+    color:var(--blanco);
+    text-decoration:none;
+}
+.footer-columna a:hover{
+    text-decoration:underline;
+}
+.copyright{
+    text-align:center;
+    padding:20px;
+    background-color:rgba(0,0,0,0.15);
+    font-size:0.9rem;
+}
+/*====================================
+            GRID
+====================================*/
+.grid-trimestres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.trimestre {
+    transition: transform 0.2s ease;
+}
+
+.trimestre:hover {
+    transform: translateY(-5px);
+}
+/*====================================
+            GRID-CONTACTO
+====================================*/
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-contacto h3 {
+    color: var(--azul-secundario);
+    margin-top: 20px;
+}
+
+.mapa-contacto iframe {
+    border-radius: var(--radio);
+}
+
+.campo-form {
+    margin-bottom: 15px;
+}
+
+.campo-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--gris-texto);
+}
+
+.campo-form input,
+.campo-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: 2px solid var(--azul-borde);
+    border-color: transparent;
+}
+
+.aviso-form {
+    font-size: 0.9rem;
+    color: var(--gris-texto);
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .grid-contacto {
+        grid-template-columns: 1fr;
+    }
+}
+/*====================================
+            GRID-NOTICIAS
+====================================*/
+.grid-noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.noticia {
+    padding: 0;
+    overflow: hidden;
+}
+
+.imagen-noticia {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.noticia-contenido {
+    padding: 20px;
+}
+
+.fecha-noticia {
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.leer-mas {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--azul-secundario);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.leer-mas:hover {
+    text-decoration: underline;
+}
+
+.subtitulo {
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .grid-noticias {
+        grid-template-columns: 1fr;
+    }
+}
+/* ====================================
+   MEDIA QUERIES - RESPONSIVIDAD
+==================================== */
+
+/* --- Tabletas y dispositivos medianos (768px - 1024px) --- */
+@media (max-width: 1024px) {
+    header {
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .titulo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .siglas {
+        font-size: 1rem;
+    }
+    
+    .hero {
+        height: 300px;
+    }
+    
+    .hero-contenido h2 {
+        font-size: 2rem;
+    }
+}
+
+/* --- Teléfonos y dispositivos pequeños (hasta 768px) --- */
+@media (max-width: 768px) {
+    /* HEADER */
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    
+    .logo-izquierdo img,
+    .logo-derecho img {
+        width: 65px;
+        height: auto;
+    }
+    
+    .titulo {
+        max-width: 100%;
+        order: 2; /* Mueve el título al centro */
+    }
+    
+    .titulo h1 {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+    
+    .siglas {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo-izquierdo {
+        order: 1;
+    }
+    
+    .logo-derecho {
+        order: 3;
+    }
+    
+    /* NAVEGACIÓN */
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    nav a {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    nav a:hover {
+        background-color: var(--azul-principal);
+    }
+    
+    /* HERO BANNER */
+    .hero {
+        height: 200px;
+        background-position: center center;
+    }
+    
+    .hero-contenido h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        padding: 0 15px;
+    }
+    
+    .hero-contenido p {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    .boton {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* MAIN - LAYOUT PRINCIPAL */
+    main {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .contenido {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .lateral {
+        flex: 1;
+        width: 100%;
+    }
+    
+    /* TARJETAS */
+    .tarjeta {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .tarjeta h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* GRID DE NOTICIAS */
+    .grid-noticias {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .imagen-noticia {
+        height: 150px;
+    }
+    
+    /* GRID DE TRIMESTRES */
+    .grid-trimestres {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    /* GRID DE CONTACTO */
+    .grid-contacto {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* FORMULARIO */
+    .campo-form input,
+    .campo-form textarea {
+        font-size: 16px; /* Evita zoom automático en iOS */
+    }
+    
+    /* FOOTER */
+    .footer-contenedor {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px 15px;
+        text-align: center;
+    }
+    
+    .footer-columna {
+        width: 100%;
+    }
+    
+    .footer-columna ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .footer-columna li {
+        margin-bottom: 5px;
+    }
+    
+    .copyright {
+        font-size: 0.75rem;
+        padding: 15px;
+    }
+}
+
+/* --- Teléfonos muy pequeños (hasta 480px) --- */
+@media (max-width: 480px) {
+    .logo-izquierdo img,
+    .logo-derecho img {
+        width: 50px;
+    }
+    
+    .titulo h1 {
+        font-size: 0.8rem;
+    }
+    
+    .hero {
+        height: 180px;
+    }
+    
+    .hero-contenido h2 {
+        font-size: 1rem;
+    }
+    
+    .hero-contenido p {
+        font-size: 0.8rem;
+    }
+    
+    .grid-trimestres {
+        grid-template-columns: 1fr;
+    }
+    
+    .boton {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* --- Transiciones suaves --- */
+.tarjeta,
+.boton,
+nav a,
+.footer-columna a {
+    transition: all 0.3s ease;
+}
+
+/* --- Efecto de elevación en tarjetas --- */
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+/* --- Efecto en botones --- */
+.boton:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 12px rgba(13, 71, 161, 0.3);
+}
+
+/* --- Efecto en enlaces del nav --- */
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* --- Efecto en enlaces del footer --- */
+.footer-columna a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* --- Efecto en imágenes de noticias --- */
+.imagen-noticia {
+    transition: transform 0.5s ease;
+}
+
+.noticia:hover .imagen-noticia {
+    transform: scale(1.05);
+}
+/* Agregar al :root */
+:root {
+    /* Tipografía */
+    --fuente-principal: 'Segoe UI', Arial, Helvetica, sans-serif;
+    --fuente-secundaria: 'Georgia', serif;
+}
+
+/* Aplicar a body */
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Mejorar títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--azul-principal);
+    border-bottom: 3px solid var(--azul-claro);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+/* ====================================
+   ESTRUCTURA - LAYOUT DE DOS COLUMNAS
+==================================== */
+
+.estructura-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.estructura-columna-izquierda {
+    flex: 0 0 70%; /* Ocupa el 70% del ancho */
+    max-width: 70%;
+}
+
+.estructura-columna-derecha {
+    flex: 0 0 30%; /* Ocupa el 30% del ancho */
+    max-width: 30%;
+    position: sticky;
+    top: 20px; /* Se queda fijo al hacer scroll */
+}
+
+/* ====================================
+   INTEGRANTES - DISTRIBUCIÓN JERÁRQUICA
+==================================== */
+
+.subtitulo {
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- FILA DEL SECRETARIO GENERAL (CENTRADO) --- */
+.fila-secretario-general {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.fila-secretario-general .integrante {
+    max-width: 350px;
+    width: 100%;
+    border-left: 6px solid #D4A017;
+    background-color: #FFFDF5;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+}
+
+.fila-secretario-general .integrante-foto {
+    width: 140px;
+    height: 140px;
+    border: 4px solid #D4A017;
+}
+
+.fila-secretario-general .integrante-texto h3 {
+    color: #D4A017;
+    font-size: 1.2rem;
+}
+
+.fila-secretario-general .integrante-texto p {
+    font-weight: bold;
+    color: var(--azul-principal);
+}
+
+/* --- TÍTULOS DE COMISIONES --- */
+.seccion-comision {
+    color: var(--azul-principal);
+    font-size: 1.2rem;
+    border-bottom: 3px solid var(--azul-claro);
+    padding-bottom: 8px;
+    margin: 35px 0 20px 0;
+}
+
+.seccion-comision:first-of-type {
+    margin-top: 0;
+}
+
+/* --- GRID DE INTEGRANTES --- */
+.grid-integrantes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Reducido a 2 columnas para mejor ajuste */
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* --- TARJETA DE INTEGRANTE (BASE) --- */
+.integrante {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-left: 6px solid var(--azul-borde);
+    border-radius: var(--radio);
+    padding: 15px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.integrante:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+}
+
+.integrante-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.integrante-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--azul-principal);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.integrante:hover .integrante-foto {
+    transform: scale(1.05);
+    border-color: var(--azul-borde);
+}
+
+.integrante-texto h3 {
+    color: var(--azul-secundario);
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+}
+
+.integrante-texto p {
+    margin: 0;
+    color: var(--gris-texto);
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+/* --- COMISIÓN DE HONOR Y JUSTICIA --- */
+.comision-honor {
+    border-left-color: #8B0000;
+}
+
+.comision-honor .integrante-foto {
+    border-color: #8B0000;
+}
+
+.comision-honor .integrante-texto h3 {
+    color: #8B0000;
+}
+
+.comision-honor:hover .integrante-foto {
+    border-color: #CC0000;
+}
+
+/* --- COMISIÓN DE HACIENDA --- */
+.comision-hacienda {
+    border-left-color: #1B5E20;
+}
+
+.comision-hacienda .integrante-foto {
+    border-color: #1B5E20;
+}
+
+.comision-hacienda .integrante-texto h3 {
+    color: #1B5E20;
+}
+
+.comision-hacienda:hover .integrante-foto {
+    border-color: #2E7D32;
+}
+
+/* ====================================
+   COLUMNA DERECHA - INFO INSTITUCIONAL
+==================================== */
+
+.institucional-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: var(--radio);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.institucional-card:hover {
+    transform: translateX(-5px);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.institucional-card h3 {
+    color: var(--azul-principal);
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--azul-claro);
+    font-size: 1.1rem;
+}
+
+.institucional-card p {
+    color: var(--gris-texto);
+    line-height: 1.7;
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+}
+
+.institucional-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Listas de valores y objetivos --- */
+.lista-valores,
+.lista-objetivos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-valores li,
+.lista-objetivos li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gris-claro);
+    color: var(--gris-texto);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.lista-valores li:last-child,
+.lista-objetivos li:last-child {
+    border-bottom: none;
+}
+
+.lista-valores li strong {
+    color: var(--azul-principal);
+}
+
+.lista-objetivos li {
+    padding-left: 5px;
+}
+
+/* ====================================
+   RESPONSIVO
+==================================== */
+
+@media (max-width: 1200px) {
+    .estructura-columna-izquierda {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+    
+    .estructura-columna-derecha {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .estructura-columna-izquierda {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    
+    .estructura-columna-derecha {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    
+    .grid-integrantes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .estructura-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .estructura-columna-izquierda,
+    .estructura-columna-derecha {
+        flex: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .estructura-columna-derecha {
+        position: static; /* Quita el sticky en móvil */
+    }
+    
+    .grid-integrantes {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .fila-secretario-general .integrante {
+        max-width: 280px;
+    }
+    
+    .fila-secretario-general .integrante-foto {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .integrante-foto {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .integrante-texto h3 {
+        font-size: 0.85rem;
+    }
+    
+    .integrante-texto p {
+        font-size: 0.75rem;
+    }
+    
+    .institucional-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-integrantes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .fila-secretario-general .integrante {
+        max-width: 100%;
+    }
+    
+    .fila-secretario-general .integrante-foto {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .integrante {
+        padding: 12px;
+    }
+    
+    .integrante-foto {
+        width: 100px;
+        height: 100px;
+    }
+}
+/* ====================================
+   TRANSPARENCIA - LAYOUT DE DOS COLUMNAS
+==================================== */
+
+.transparencia-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.transparencia-columna-izquierda {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.transparencia-columna-derecha {
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: sticky;
+    top: 20px;
+}
+
+/* --- Subtítulo --- */
+.subtitulo {
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- Título de trimestres --- */
+.seccion-trimestre {
+    color: var(--azul-principal);
+    font-size: 1.2rem;
+    border-bottom: 3px solid var(--azul-claro);
+    padding-bottom: 8px;
+    margin: 0 0 25px 0;
+}
+
+/* --- Grid de trimestres --- */
+.grid-trimestres {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* --- Tarjeta de trimestre --- */
+.trimestre {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-left: 6px solid var(--azul-borde);
+    border-radius: var(--radio);
+    padding: 20px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.trimestre:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+}
+
+.trimestre h3 {
+    color: var(--azul-secundario);
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.trimestre p {
+    color: var(--gris-texto);
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    flex: 1;
+}
+
+/* ====================================
+   BOTÓN CONSULTAR - CONTRASTE MEJORADO
+==================================== */
+
+.boton-trimestre {
+    display: inline-block;
+    background-color: var(--azul-principal) !important; /* Fondo azul */
+    color: #FFFFFF !important; /* Texto blanco */
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: flex-start;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-trimestre:hover {
+    background-color: var(--azul-principal) !important;
+    color: #FFFFFF !important;
+    transform: scale(1.02);
+}
+
+/* ====================================
+   COLUMNA DERECHA - RECURSOS
+==================================== */
+
+.recursos-card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: var(--radio);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recursos-card:hover {
+    transform: translateX(-5px);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.recursos-card h3 {
+    color: var(--azul-principal);
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--azul-claro);
+    font-size: 1.1rem;
+}
+
+/* --- Lista de recursos --- */
+.lista-recursos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-recursos li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.lista-recursos li:last-child {
+    border-bottom: none;
+}
+
+.lista-recursos a {
+    color: var(--azul-secundario);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.lista-recursos a:hover {
+    color: var(--azul-principal);
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+.icono-recurso {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* --- Info extra --- */
+.info-extra {
+    background-color: var(--azul-claro);
+    border-left: 6px solid var(--azul-borde);
+}
+
+.info-extra p {
+    color: var(--gris-texto);
+    line-height: 1.7;
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+}
+
+.info-extra p:last-child {
+    margin-bottom: 0;
+}
+
+.contacto-rapido {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contacto-rapido p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.boton-rapido {
+    display: inline-block;
+    background-color: var(--azul-principal);
+    color: var(--blanco);
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-rapido:hover {
+    background-color: var(--azul-secundario);
+    transform: scale(1.02);
+}
+
+/* ====================================
+   RESPONSIVO PARA TRANSPARENCIA
+==================================== */
+
+@media (max-width: 1024px) {
+    .transparencia-columna-izquierda {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    
+    .transparencia-columna-derecha {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    
+    .grid-trimestres {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .transparencia-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .transparencia-columna-izquierda,
+    .transparencia-columna-derecha {
+        flex: 1;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .transparencia-columna-derecha {
+        position: static;
+    }
+    
+    .grid-trimestres {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .trimestre {
+        padding: 15px;
+    }
+    
+    .trimestre h3 {
+        font-size: 1rem;
+    }
+    
+    .boton-trimestre {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-trimestres {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .recursos-card {
+        padding: 15px;
+    }
+    
+    .lista-recursos li {
+        padding: 8px 0;
+    }
+}
+/* ====================================
+   DETALLE DE TRIMESTRE - TABLA
+==================================== */
+
+.detalle-trimestre {
+    width: 100%;
+    max-width: 100%;
+}
+
+.detalle-header {
+    margin-bottom: 30px;
+}
+
+.detalle-header h2 {
+    color: var(--azul-principal);
+    font-size: 1.8rem;
+    margin: 10px 0 5px 0;
+}
+
+.detalle-header p {
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+}
+
+.boton-volver {
+    display: inline-block;
+    background-color: var(--gris-claro);
+    color: var(--gris-texto);
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.boton-volver:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-principal);
+}
+
+/* --- Tabla --- */
+.tabla-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: var(--radio);
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra);
+}
+
+.tabla-documentos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 600px;
+}
+
+.tabla-documentos thead {
+    background-color: var(--azul-principal);
+    color: var(--blanco);
+}
+
+.tabla-documentos th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabla-documentos td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.tabla-documentos tbody tr:hover {
+    background-color: var(--azul-claro);
+}
+
+.tabla-documentos tbody tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+
+.tabla-documentos tbody tr:nth-child(even):hover {
+    background-color: var(--azul-claro);
+}
+
+.tabla-documentos td:first-child {
+    font-weight: bold;
+    color: var(--azul-principal);
+    text-align: center;
+}
+
+.tabla-documentos td:nth-child(2) {
+    text-align: center;
+    color: var(--gris-texto);
+}
+
+.enlace-documento {
+    color: var(--azul-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background-color: var(--azul-claro);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.enlace-documento:hover {
+    background-color: var(--azul-secundario);
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+/* --- Footer del detalle --- */
+.detalle-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gris-claro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.detalle-footer p {
+    color: var(--gris-texto);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ====================================
+   RESPONSIVO PARA TABLA
+==================================== */
+
+@media (max-width: 768px) {
+    .detalle-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .tabla-documentos {
+        font-size: 0.8rem;
+        min-width: 500px;
+    }
+    
+    .tabla-documentos th,
+    .tabla-documentos td {
+        padding: 8px 10px;
+    }
+    
+    .enlace-documento {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+    
+    .detalle-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla-documentos {
+        font-size: 0.7rem;
+        min-width: 400px;
+    }
+    
+    .tabla-documentos th,
+    .tabla-documentos td {
+        padding: 6px 8px;
+    }
+    
+    .enlace-documento {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+}
